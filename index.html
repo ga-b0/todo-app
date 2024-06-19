@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+  
+  <title>Todo app</title>
+
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+  <script>
+    const storageTheme = localStorage.getItem("theme");
+    const systemColorScheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? "dark" : "light";
+    const newTheme = storageTheme ?? systemColorScheme;
+
+    document.documentElement.setAttribute("data-theme", newTheme);
+  </script>
+</head>
+<body>
+
+  <header class="hero container">
+    <h1 class="hero__title">Todo</h1>
+    <figure class="hero__picture dark">
+        <img src="images/icon-sun.svg" class="hero__img">
+    </figure>
+  </header>
+  <main class="main container">
+    <form class="form">
+      <div class="circle"></div>
+      <input type="text" placeholder="Create a new todo..." class="input">
+    </form>
+    <div class="list-tasks">
+      <div class="stadistics">
+        <p class="items">5 items left</p>
+        <div class="options">
+          <p class="clear">Clear</p>
+          <p class="completed">Completed</p>
+        </div>
+      </div>
+    </div>
+    <div class="list-option">
+      <p class="all-option">All</p>
+      <p class="active-option">Active</p>
+      <p class="completed-option">Completed</p>
+    </div>
+    <div class="list-footer container">
+      <p class="list-footer-paragraph">Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        Coded by <a href="https://github.com/ga-b0">Gabo</a>.</p>
+    </div>
+  </main>
+  <script src="js/app.js"></script>
+
+
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+</body>
+</html>
